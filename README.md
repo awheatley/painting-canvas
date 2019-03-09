@@ -1,2 +1,2 @@
 # painting-canvas
-Based on a tutorial by We Bos (https://javascript30.com)
+Based on a tutorial by Wes Bos (https://wesbos.com/) (https://javascript30.com)
