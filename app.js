@@ -17,6 +17,11 @@ let lastY = 0;
 let hue = 0;
 let grow = true;
 
+const resize = () => {
+    c.width = window.innerWidth;
+    c.height = window.innerHeight;
+};
+
 const draw = (e) => {
     if (!isDrawing) return;  // Function doesn't run if not mousedown
 
@@ -42,15 +47,9 @@ const draw = (e) => {
         hue = 0;
     }
 
-    if (ctx.lineWidth > 100 || ctx.lineWidth <= 1) {
+    if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
         grow = !grow;
     }
-
-    // if (grow) {
-    //     ctx.lineWidth++;
-    // } else {
-    //     ctx.lineWidth--;
-    // }
 
     grow ? ctx.lineWidth++ : ctx.lineWidth--;
 };
@@ -69,3 +68,5 @@ c.addEventListener('mouseup', () => isDrawing = false);
 
 // If mouse goes outside window
 c.addEventListener('mouseout', () => isDrawing = false);
+
+window.addEventListener('resize', resize);
