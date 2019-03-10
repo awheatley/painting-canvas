@@ -17,11 +17,6 @@ let lastY = 0;
 let hue = 0;
 let grow = true;
 
-const resize = () => {
-    c.width = window.innerWidth;
-    c.height = window.innerHeight;
-};
-
 const draw = (e) => {
     if (!isDrawing) return;  // Function doesn't run if not mousedown
 
@@ -68,5 +63,3 @@ c.addEventListener('mouseup', () => isDrawing = false);
 
 // If mouse goes outside window
 c.addEventListener('mouseout', () => isDrawing = false);
-
-window.addEventListener('resize', resize);
